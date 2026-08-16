@@ -104,7 +104,7 @@ class PrayerTimeService {
         return map['SehirID'].toString();
       }
     }
-    throw PrayerTimeException('$_ilAdi için şehir kodu bulunamadı.');
+    throw const PrayerTimeException('$_ilAdi için şehir kodu bulunamadı.');
   }
 
   Future<_IlceCozumSonucu> _findIlceKodu(
@@ -132,7 +132,7 @@ class PrayerTimeService {
         return _IlceCozumSonucu(ilceId: id, ilceAdi: ad);
       }
     }
-    throw PrayerTimeException('$_ilceAdi için ilçe kodu bulunamadı.');
+    throw const PrayerTimeException('$_ilceAdi için ilçe kodu bulunamadı.');
   }
 
   Future<List<DailyPrayerTimes>> _fetchVakitler(String ilceId) async {

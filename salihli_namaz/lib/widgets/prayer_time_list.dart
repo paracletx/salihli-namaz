@@ -72,7 +72,7 @@ class _PrayerRow extends StatelessWidget {
               width: 6,
               height: 6,
               margin: const EdgeInsets.only(right: 10),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: accent,
                 shape: BoxShape.circle,
               ),
