@@ -23,8 +23,17 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Eksik platform dosyalarını tamamla (gradlew vb.)
-        run: flutter create --platforms=android .
+      - name: Gradle wrapper dosyalarını hazırla
+        run: |
+          set -e
+          TEMP_DIR=$(mktemp -d)
+          flutter create --platforms=android --project-name wrapper_helper "$TEMP_DIR/wrapper_helper"
+          cp "$TEMP_DIR/wrapper_helper/android/gradlew" android/gradlew
+          cp "$TEMP_DIR/wrapper_helper/android/gradlew.bat" android/gradlew.bat
+          mkdir -p android/gradle/wrapper
+          cp "$TEMP_DIR/wrapper_helper/android/gradle/wrapper/gradle-wrapper.jar" android/gradle/wrapper/gradle-wrapper.jar
+          chmod +x android/gradlew
+          rm -rf "$TEMP_DIR"
 
       - name: Paketleri indir
         run: flutter pub get
