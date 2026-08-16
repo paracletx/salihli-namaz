@@ -30,7 +30,7 @@ class CountdownDisplay extends StatelessWidget {
             fontSize: 13,
             fontWeight: FontWeight.w600,
             letterSpacing: 3,
-            color: Colors.white.withOpacity(0.55),
+            color: Colors.white.withValues(alpha: 0.55),
           ),
         ),
         const SizedBox(height: 10),

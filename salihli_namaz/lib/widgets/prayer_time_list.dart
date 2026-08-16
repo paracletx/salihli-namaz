@@ -20,9 +20,9 @@ class PrayerTimeList extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.04),
+        color: Colors.white.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.08)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
       ),
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Column(
@@ -38,7 +38,7 @@ class PrayerTimeList extends StatelessWidget {
                 thickness: 1,
                 indent: 20,
                 endIndent: 20,
-                color: Colors.white.withOpacity(0.06),
+                color: Colors.white.withValues(alpha: 0.06),
               ),
           ],
         ],
@@ -55,13 +55,13 @@ class _PrayerRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accent = const Color(0xFFE8C077);
+    const accent = Color(0xFFE8C077);
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
       decoration: BoxDecoration(
-        color: isNext ? accent.withOpacity(0.12) : Colors.transparent,
+        color: isNext ? accent.withValues(alpha: 0.12) : Colors.transparent,
         borderRadius: BorderRadius.circular(14),
       ),
       margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
@@ -85,7 +85,7 @@ class _PrayerRow extends StatelessWidget {
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: isNext ? FontWeight.w700 : FontWeight.w500,
-                color: isNext ? accent : Colors.white.withOpacity(0.85),
+                color: isNext ? accent : Colors.white.withValues(alpha: 0.85),
                 letterSpacing: 0.3,
               ),
             ),
@@ -95,7 +95,7 @@ class _PrayerRow extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: isNext ? FontWeight.w700 : FontWeight.w600,
-              color: isNext ? accent : Colors.white.withOpacity(0.9),
+              color: isNext ? accent : Colors.white.withValues(alpha: 0.9),
             ),
           ),
         ],

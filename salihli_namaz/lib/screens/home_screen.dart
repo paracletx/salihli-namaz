@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           TurkishDateFormatter.formatLong(_now),
           style: TextStyle(
             fontSize: 15,
-            color: Colors.white.withOpacity(0.6),
+            color: Colors.white.withValues(alpha: 0.6),
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -229,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             fontSize: 22,
             fontWeight: FontWeight.w800,
             letterSpacing: 6,
-            color: Colors.white.withOpacity(0.92),
+            color: Colors.white.withValues(alpha: 0.92),
           ),
         ),
         const SizedBox(height: 2),
@@ -239,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             fontSize: 11,
             fontWeight: FontWeight.w600,
             letterSpacing: 4,
-            color: Colors.white.withOpacity(0.38),
+            color: Colors.white.withValues(alpha: 0.38),
           ),
         ),
       ],
@@ -255,20 +255,20 @@ class _OfflineBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.06),
+        color: Colors.white.withValues(alpha: 0.06),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.cloud_off_rounded,
-              size: 13, color: Colors.white.withOpacity(0.55)),
+              size: 13, color: Colors.white.withValues(alpha: 0.55)),
           const SizedBox(width: 6),
           Text(
             'Çevrimdışı • önbellek verisi',
             style: TextStyle(
               fontSize: 11,
-              color: Colors.white.withOpacity(0.55),
+              color: Colors.white.withValues(alpha: 0.55),
               fontWeight: FontWeight.w500,
             ),
           ),

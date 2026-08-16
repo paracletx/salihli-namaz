@@ -33,7 +33,7 @@ class StatusView extends StatelessWidget {
           else
             Icon(
               Icons.wifi_off_rounded,
-              color: Colors.white.withOpacity(0.6),
+              color: Colors.white.withValues(alpha: 0.6),
               size: 40,
             ),
           const SizedBox(height: 18),
@@ -42,7 +42,7 @@ class StatusView extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 15,
-              color: Colors.white.withOpacity(0.75),
+              color: Colors.white.withValues(alpha: 0.75),
               height: 1.4,
             ),
           ),
