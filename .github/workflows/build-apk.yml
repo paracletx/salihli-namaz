@@ -1,0 +1,42 @@
+name: APK Oluştur
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: {}
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu al
+        uses: actions/checkout@v4
+
+      - name: Java kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Flutter kur
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Eksik platform dosyalarını tamamla (gradlew vb.)
+        run: flutter create --platforms=android .
+
+      - name: Paketleri indir
+        run: flutter pub get
+
+      - name: Analiz et
+        run: flutter analyze
+
+      - name: Release APK derle
+        run: flutter build apk --release
+
+      - name: APK'yı yükle (indirilebilir yap)
+        uses: actions/upload-artifact@v4
+        with:
+          name: salihli-namaz-vakitleri-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
